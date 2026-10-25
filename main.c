@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+double f(double x) {
+	return x;
+}
+double Integral(double (*f)(double), double from, double to, double step) {
+	double sum = 0.0;
+	for (double x = from; x < to; x += step) {
+		sum += f(x) * step;
+	}
+	return sum;
+}
+int main() {
+	double res;
+	res = Integral(sin, 0.0, 3.14159/4, 0.0001);
+	printf("Result: %lf\n", res);
+	return 0;
+}
