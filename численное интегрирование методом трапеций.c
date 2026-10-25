@@ -6,9 +6,9 @@ double f(double x) {
 double Integral(double (*f)(double), double from, double to, double step) {
 	double sum = 0.0;
 	for (double x = from; x < to; x += step) {
-		sum += (f(x) + f(x + step))/2 * step;
+		sum += (f(x) + f(x + step))/2;
 	}
-	return sum;
+	return sum * step;
 }
 int main() {
 	double res;
